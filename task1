@@ -1,0 +1,23 @@
+using System;
+
+namespace task1
+{
+    class Program
+    {
+        //Алгоритм переворота строки
+        static void Main(string[] args)
+        {   
+            Console.Write("Алгоритм переворота строки\nВведите текст: ");
+            string str = Console.ReadLine();
+            string ReversedStr = "";
+
+            for (int i = str.Length - 1; i >= 0; i--)
+            {
+                ReversedStr += str[i];
+            }
+
+            Console.Write("Перевернутый текст: " + ReversedStr);
+            Console.ReadKey();
+        }
+    }
+}
