@@ -1,0 +1,30 @@
+
+using System;
+using System.Collections.Generic;
+
+namespace task3
+{
+    class Program
+    {
+        //Алгоритм, который подсчитывает количество вхождений каждого из символов в строке
+        static void Main(string[] args)
+        {
+            Console.Write("Алгоритм, подсчитывающий количество вхождений каждого из символов в строке\nВведите текст: ");        
+            var text = new Dictionary<char, int>();
+            string str = Console.ReadLine();
+            str = str.ToLower();
+
+            foreach (char c in str)
+                if (text.ContainsKey(c))
+                    text[c]++;
+                else text.Add(c, 1);
+
+            Console.WriteLine("Количество каждого из символов в строке: ");          
+
+            foreach (var letter in text)
+                Console.WriteLine(letter.Key + ": " + letter.Value);
+
+            Console.ReadKey();
+        }
+    }
+}
