@@ -1,0 +1,41 @@
+using System;
+using System.Text;
+
+namespace task2
+{
+    class Program
+    {
+        //Алгоритм определения палиндрома
+        static void Main(string[] args)
+        {
+            Console.Write("Алгоритм определения палиндрома\nВведите текст: ");
+            string str = Console.ReadLine();
+            bool palindrome = IsPalindrome(str);
+
+            if (palindrome)
+            Console.WriteLine("Текст является палиндромом");
+            else
+            Console.WriteLine("Текст не является палиндромом");
+
+            Console.ReadKey();
+
+        }
+        static bool IsPalindrome(string str)
+        {
+            StringBuilder ModText = new StringBuilder();
+
+            foreach (char c in str)
+            {
+                if (char.IsLetterOrDigit(c)) ModText.Append(c);
+            }
+
+            string text = ModText.ToString().ToLower();
+            char[] letters = text.ToCharArray();
+            Array.Reverse(letters);
+            string ReversedText = new string(letters);
+            return text == ReversedText;
+        }
+        
+    }
+}
+ 
